@@ -9,5 +9,7 @@ import "channels"
 
 import "../src/application.css"
 
+import "./flashMessages.js"
+
 Rails.start()
 ActiveStorage.start()
