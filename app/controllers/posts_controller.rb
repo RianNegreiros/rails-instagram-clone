@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show ]
+  include SuggestedUsers
+
+  before_action :set_suggested_users, only: %i[index]
+  before_action :set_post, only: %i[show]
 
   def index
     @posts = Post.all
@@ -13,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(created_by: current_user))
 
       if @post.save
         redirect_to @post, notice: "Post was successfully created."
