@@ -9,4 +9,21 @@ class UsersController < ApplicationController
 
     render "posts/index"
   end
+
+  def edit; end
+
+  def update
+    if current_user(user_params)
+      redirect_to root_path, notice: "Your profile has been updated successfully"
+    else
+      flash.now[:alert] = current_user.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name)
+  end
 end

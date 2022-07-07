@@ -48,3 +48,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-smtp', require: false
 
 gem "devise", "~> 4.8"
+
+gem "letter_opener", "~> 1.8"
+
+gem "active_storage_validations", "~> 0.9.8"
