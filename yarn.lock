@@ -24,6 +24,11 @@ spark-md5@^3.0.0:
   resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
   integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
+tingle.js@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.16.0.tgz#1ac35f91315271c47cb6bb7299d0b327ac7539ea"
+  integrity sha512-xV4F2j7+QMxDfzuX59KhxiWKeAgI/QSC8o7k9rQu8hZD8TZefMTViq7l07DIcVDb30IlAPlyFRs6SnD1Fup6hA==
+
 toastify-js@^1.11.2:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/toastify-js/-/toastify-js-1.11.2.tgz#5c66cb05cee30b09e5bd8961ab809e41a3ce716c"

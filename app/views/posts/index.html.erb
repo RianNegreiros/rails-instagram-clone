@@ -8,12 +8,14 @@
   </section>
 
   <aside>
-    sidebar
+    <%= render current_user %>
 
     <section class="suggestions">
       <h4>
         Suggestions For you
       </h4>
+
+      <%= render @suggested_users %>
     </section>
   </aside>
 
