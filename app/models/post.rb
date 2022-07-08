@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to :created_by, class_name: "User"
 
   has_many :likes, dependent: :destroy
+  has_many :comments
 
   has_one_attached :photo
 

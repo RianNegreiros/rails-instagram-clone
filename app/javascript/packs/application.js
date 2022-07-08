@@ -15,3 +15,6 @@ import "./likes"
 
 Rails.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")
