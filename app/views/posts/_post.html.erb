@@ -19,6 +19,8 @@
   <div class="details">
     <section class="actions">
       <nav>
+        <%= render "likes/like", post: post %>
+
         <div class="action">
           <div class="like">
             <%= embedded_svg "like.svg" %>
