@@ -3,6 +3,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.create!(comment_params)
 
     if @comment.save
+      CommentChannel.broadcast_to("comment_channel",
+                                  post_id: @comment.post_id,
+                                  comment_created: render_to_string(partial: @comment))
+
       redirect_to @comment.post, notice: "Comment has been successfully created."
     else
       flash.now[:alert] = @comment.errors.full_messages.to_sentence
