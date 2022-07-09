@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   include SuggestedUsers
 
-  before_action :set_suggested_users, only: %i[index]
   before_action :set_post, only: %i[show]
+  before_action :set_suggested_users, only: %i[index]
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -19,23 +19,23 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params.merge(created_by: current_user))
 
-      if @post.save
-        PostChannel.broadcast_to "post_channel", post_created: render_to_string(partial: @post)
+    if @post.save
+      PostChannel.broadcast_to "post_channel", post_created: render_to_string(partial: @post)
 
-        redirect_to @post, notice: "Post was successfully created."
-      else
-        flash.now[:alert] = @post.errors.full_messages.to_sentence
-        render :new
-      end
+      redirect_to @post, notice: 'Post has been successfully created'
+    else
+      flash.now[:alert] = @post.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   private
-  
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    def post_params
-      params.require(:post).permit(:photo, :description)
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:photo, :description)
+  end
 end

@@ -1,6 +1,6 @@
 <main class="posts-page has-comments container">
   <section class="posts">
-      <%= render @post %>
+    <%= render @post %>
   </section>
 
   <aside>
@@ -10,7 +10,6 @@
       <% else %>
         Any comment yet.
       <% end %>
-
       <%= form_with model: @comment, local: true, class: "new-comment" do |form| %>
         <%= form.hidden_field :post_id, value: @post.id %>
 

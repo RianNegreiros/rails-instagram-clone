@@ -7,14 +7,14 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import "../src/application.css"
+import "../src/application.css";
 
-import "./flashMessages.js"
-import "./modal"
-import "./likes"
-
-Rails.start()
-ActiveStorage.start()
+import "./flashMessages";
+import "./modal";
+import "./likes";
 
 require("trix")
 require("@rails/actiontext")
+
+Rails.start()
+ActiveStorage.start()

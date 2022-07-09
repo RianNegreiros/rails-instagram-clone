@@ -22,15 +22,9 @@
         <%= render "likes/like", post: post %>
 
         <div class="action">
-          <div class="like">
-            <%= embedded_svg "like.svg" %>
-          </div>
-        </div>
-
-        <div class="action">
           <%= link_to post do %>
             <%= embedded_svg "comment.svg" %>
-            <% end %>
+          <% end %>
         </div>
 
         <div class="action">
@@ -45,13 +39,12 @@
       </nav>
     </section>
 
-    <section>
+    <section class="description">
       <p><strong><%= post.created_by.username %></strong> <%= post.description %></p>
     </section>
 
-    <section>
+    <section class="created-at">
       <%= time_ago_in_words(post.created_at) %> ago
     </section>
-
   </div>
 </article>
